@@ -87,11 +87,11 @@ public class CreateOrderActivity extends AppCompatActivity {
         String order = String.format(getString(R.string.order), name, password, drink, optionOfDrink);
         String additions;
         if (builderAdditions.length() > 0){
-            additions = getString(R.string.drinkAdditions) + builderAdditions.toString();
+            additions = "\n" + getString(R.string.drinkAdditions) + builderAdditions.toString();
         } else{
             additions = "";
         }
-        String fullOrder = order + additions;
+        String fullOrder = order +  additions;
         Intent intent = new Intent(this, OrderDetailActivity.class);
         intent.putExtra("order", fullOrder);
         startActivity(intent);
